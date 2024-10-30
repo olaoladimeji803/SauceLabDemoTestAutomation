@@ -17,7 +17,7 @@ namespace SauceDemoTestAutomation.Pages
         {
             _driver = driver;
         }
-
+        
         By backPackItem = By.XPath("//*[@id='item_4_img_link']/img");
         By addToCartBaclPack = By.XPath("//*[text()='ADD TO CART']");
         By cartBasket = By.XPath("//*[@class='fa-layers-counter shopping_cart_badge']");
@@ -26,20 +26,18 @@ namespace SauceDemoTestAutomation.Pages
         By cartListItem = By.CssSelector("a.shopping_cart_link.fa-layers.fa-fw");
         By cartListItem1 = By.CssSelector("span.fa-layers-counter.shopping_cart_badge");                                  
         By checkOutButton = By.CssSelector("a.btn_action.checkout_button");
-        By firstNameField = By.Id("first-name");
-        By lastNameField = By.Id("last-name");
-        By postCodeField = By.Id("postal-code");
-        By continueButton = By.CssSelector("input.btn_primary.cart_button");
-        By finishButton = By.CssSelector("a.btn_action.cart_button");
-        By confirmationTextMessage = By.CssSelector("div.complete-text");
         By backLightItem = By.CssSelector("#inventory_container > div > div:nth-child(2) > div.pricebar > button");
         By boltTShirtItem = By.CssSelector("#inventory_container > div > div:nth-child(3) > div.pricebar > button");
-        By fleeceJacketItem = By.CssSelector("#inventory_container > div > div:nth-child(4) > div.pricebar > button");
-
+        
         public void SelectABackpackProductAndAddToCart()
         {
             _driver.FindElement(backPackItem).Click();
             _driver.FindElement(addToCartBaclPack).Click();
+            _driver.FindElement(cartBasket).Click();
+        }
+
+        public void ClickOnCart()
+        {
             _driver.FindElement(cartBasket).Click();
         }
 
@@ -67,20 +65,6 @@ namespace SauceDemoTestAutomation.Pages
             _driver.FindElement(checkOutButton).Click();
         }
 
-        public void purchaseItem(string fName, string lName, string pcode)
-        {
-            _driver.FindElement(firstNameField).SendKeys(fName);
-            _driver.FindElement(lastNameField).SendKeys(lName);
-            _driver.FindElement(postCodeField).SendKeys(pcode);
-            _driver.FindElement(continueButton).Click();
-            _driver.FindElement(finishButton).Click();
-        }
-
-        public string GetConfirmationText()
-        {
-            return _driver.FindElement(confirmationTextMessage).Text;
-        }
-
         public void AddBikeLightItemsToCartList()
         {
             _driver.FindElement(backLightItem).Click();
@@ -88,10 +72,6 @@ namespace SauceDemoTestAutomation.Pages
         public void AddBoltTShirtItemsToCartList()
         {
             _driver.FindElement(boltTShirtItem).Click();
-        }
-        public void AddFleeceJacketItemsToCartList()
-        {
-            _driver.FindElement(fleeceJacketItem).Click();
         }
     }
 }

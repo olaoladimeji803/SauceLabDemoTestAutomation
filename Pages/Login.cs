@@ -10,8 +10,9 @@ namespace SauceDemoTestAutomation.Pages
 {
     public class Login
     {
+        
         IWebDriver _driver;
-        public Login(IWebDriver driver)
+        public Login(IWebDriver driver) 
         {
             _driver = driver;
         }
@@ -27,6 +28,7 @@ namespace SauceDemoTestAutomation.Pages
         {
            Thread.Sleep(2000);
            _driver.FindElement(userNameField).SendKeys(userName);
+           
         }
 
         public void EnterPassword(string password)
@@ -37,15 +39,7 @@ namespace SauceDemoTestAutomation.Pages
         public void ClickLoginButton()
         {
             _driver.FindElement(loginBtn).Click();
-          //  Thread.Sleep(2000);
-          //  _driver.FindElement(By.XPath("//*[@id='item_4_img_link']/img")).Click();
-          //  _driver.FindElement(By.XPath("//*[text()='ADD TO CART']")).Click();
-            ////_driver.FindElement(By.XPath("//*[@id='shopping_cart_container']a")).Click();
-          //  _driver.FindElement(By.XPath("//*[@class='fa-layers-counter shopping_cart_badge']")).Click();
-            //_driver.FindElement(By.XPath("//*[@class='inventory_item_desc']")).Text();
-
         }
-
 
         public string GetProductsHeaderText()
         {

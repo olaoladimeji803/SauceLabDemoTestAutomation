@@ -16,10 +16,12 @@ namespace SauceDemoTestAutomation.StepDefinitions
     {
         Context _context;
         Products _products;
-        public ProductsStepDefinitions(Context context, Products products)
+        Checkout _checkout;
+        public ProductsStepDefinitions(Context context, Products products, Checkout checkout)
         {
             _context = context; 
             _products = products;
+            _checkout = checkout;
         }
 
         [When(@"user select a Sauce Labs Backpack item and click 'Add to Cart'")]
@@ -55,48 +57,63 @@ namespace SauceDemoTestAutomation.StepDefinitions
            _products.ClickOnCheckOutButton();
         }
 
-        [When(@"user fill in the required information (.*) (.*) (.*) and complete the purchase")]
+        [When(@"user fill in the required information (.*) (.*) (.*) and continue")]
         public void WhenUserFillInTheRequiredInformationKazeemIyiolaMAUAndCompleteThePurchase(string fName, string lName, string pCode)
         {
-           _products.purchaseItem(fName, lName, pCode);
+           _checkout.EnterInformationDetails(fName, lName, pCode);
         }
 
         [Then(@"verify redirection to the confirmation page and (.*) is displayed accurately")]
         public void ThenVerifyRedirectionToTheConfirmationPageAndOrderSummaryIsDisplayedAccurately_(string expectedConfirmationText)
         {
-            string actualConfirmationText = _products.GetConfirmationText();
+            string actualConfirmationText = _checkout.GetConfirmationText();
             StringAssert.Contains(expectedConfirmationText, actualConfirmationText, "Your order has been dispatched, and will arrive just as fast as the pony can get there!");
         }
 
-        [Then(@"the cart count increases in the cart basket")]
+        [Then(@"the cart count increases to '1' in the cart basket")]
         public void ThenTheCartCountIncreasesInTheCartBasket()
         {
             var itemsNo =  _products.AddItemToCartList();
             Assert.That(itemsNo.Count, Is.EqualTo(1));
         }
 
-        [When(@"user select a Sauce Bike Light item and click 'Add to Cart'")]
-        public void WhenUserSelectASauceBikeLightItemAndClick()
+        [When(@"user select a 'Sauce Lab Bike Light' item cost 9.99 each")]
+        public void WhenUserSelectAItemAtCostPriceOf()
         {
             _products.AddBikeLightItemsToCartList();
         }
 
-        [When(@"user select a Sauce Bolt T-Shirt item and click 'Add to Cart'")]
-        public void WhenUserSelectASauceBoltT_ShirtItemAndClick()
+        [When(@"user select a 'Sauce Lab Bolt T-Shirt' item cost 15.99 each")]
+        public void WhenUserSelectAItemAtPriceOf()
         {
             _products.AddBoltTShirtItemsToCartList();
         }
 
-        [When(@"user select a Sauce Fleece Jacket item and click 'Add to Cart'")]
-        public void WhenUserSelectASauceFleeceJacketItemAndClick()
+        [When(@"user click on cart")]
+        public void WhenUserClickOnCart()
         {
-            _products.AddFleeceJacketItemsToCartList();
+           _products.ClickOnCart();
         }
 
-        [Then(@"the cart count increases to (.*) in the cart basket")]
-        public void ThenTheCartCountIncreasesToInTheCartBasket(int p0)
+        [Then(@"the user is redirected to the Checkout Overview page and (.*) are correctly dislayed")]
+        public void ThenTheUserIsRedirectedToTheCheckoutOverviewPageAndAreCorrectlyDislayed(string expectedItemTotal)
         {
-            throw new PendingStepException();
+             var actualItemTotal = _checkout.ReturnCalculatedItemTotalValue();
+              Assert.That(actualItemTotal, Is.EqualTo(expectedItemTotal)); 
         }
+
+
+        [When(@"user complete the order and checkout process")]
+        public void WhenUserCompleteTheOrderAndCheckoutProcess()
+        {
+            _checkout.ClickOnFinishButton();
+        }
+
+        [When(@"the user cancel the order")]
+        public void WhenTheUserCancelTheOrder()
+        {
+            _checkout.ClickOnCancelButton();
+        }
+
     }
 }

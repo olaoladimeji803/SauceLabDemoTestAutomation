@@ -122,14 +122,14 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("01_Verify that different users can successful login with Valid Credentials")]
+        [NUnit.Framework.DescriptionAttribute("02_Verify that different users can successful login with Valid Credentials")]
         [NUnit.Framework.TestCaseAttribute("standard_user", "secret_sauce", "Products", null)]
         [NUnit.Framework.TestCaseAttribute("problem_user", "secret_sauce", "Products", null)]
         [NUnit.Framework.TestCaseAttribute("performance_glitch_user", "secret_sauce", "Products", null)]
-        public virtual void _01_VerifyThatDifferentUsersCanSuccessfulLoginWithValidCredentials(string username, string password, string expectedProductHeader, string[] exampleTags)
+        public virtual void _02_VerifyThatDifferentUsersCanSuccessfulLoginWithValidCredentials(string username, string password, string expectedProductHeader, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01_Verify that different users can successful login with Valid Credentials", null, exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02_Verify that different users can successful login with Valid Credentials", null, exampleTags);
 #line 13
     this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -167,15 +167,15 @@ this.ScenarioInitialize(scenarioInfo);
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("02_Verify that different users can unsuccessful login with invalid Credentials")]
+        [NUnit.Framework.DescriptionAttribute("03_Verify that different users can unsuccessful login with invalid Credentials")]
         [NUnit.Framework.TestCaseAttribute("locked_out_user", "secret_sauce", "Epic sadface: Sorry, this user has been locked out.", null)]
         [NUnit.Framework.TestCaseAttribute("", "secret_sauce", "Epic sadface: Username is required", null)]
         [NUnit.Framework.TestCaseAttribute("standard_user", "", "Epic sadface: Password is required", null)]
         [NUnit.Framework.TestCaseAttribute("standoood_user", "screeeetars", "Epic sadface: Username and password do not match any user in this service", null)]
-        public virtual void _02_VerifyThatDifferentUsersCanUnsuccessfulLoginWithInvalidCredentials(string username, string password, string errorMessage, string[] exampleTags)
+        public virtual void _03_VerifyThatDifferentUsersCanUnsuccessfulLoginWithInvalidCredentials(string username, string password, string errorMessage, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("02_Verify that different users can unsuccessful login with invalid Credentials", null, exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("03_Verify that different users can unsuccessful login with invalid Credentials", null, exampleTags);
 #line 24
     this.ScenarioInitialize(scenarioInfo);
 #line hidden

@@ -10,7 +10,7 @@ Scenario: 01_Verify that a user can successful login with Valid Credentials
     And clicks the login button
     Then the user is redirected to the product page, and the Products is displayed
 
-    Scenario: 01_Verify that different users can successful login with Valid Credentials
+    Scenario: 02_Verify that different users can successful login with Valid Credentials
     Given the user is on the login page
     When the user enters valid <Username> and <Password>
     And clicks the login button
@@ -21,7 +21,7 @@ Scenario: 01_Verify that a user can successful login with Valid Credentials
 	| problem_user            | secret_sauce | Products              |
 	| performance_glitch_user | secret_sauce | Products              |
 
-    Scenario: 02_Verify that different users can unsuccessful login with invalid Credentials
+    Scenario: 03_Verify that different users can unsuccessful login with invalid Credentials
     Given the user is on the login page
     When the user enters invalid <Username> and <Password>
     And clicks the login button

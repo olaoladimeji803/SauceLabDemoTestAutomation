@@ -12,16 +12,16 @@ namespace SauceDemoTestAutomation.StepDefinitions
 {
     [Binding]
     internal class LoginStepDefinitions
-    { 
-        Context _context;
+    {
+        Context _context;   
         Login _login;
-        ScenarioContext _scenarioContext;
+      
 
-        public LoginStepDefinitions(Context context, Login login, ScenarioContext scenarioContext)
+        public LoginStepDefinitions(Context context, Login login)
     {
         _context = context;
         _login = login;
-        _scenarioContext = scenarioContext;
+      
     }
     
         [Given(@"the user is on the login page")]
@@ -74,8 +74,6 @@ namespace SauceDemoTestAutomation.StepDefinitions
         [Then(@"the user is unsuccessful login and the (.*) is displayed")]
         public void ThenTheUserLoginUnsuccessfulAndTheSadfaceSorryThisUserHasBeenLockedOut_IsDisplayed_(string expectedErrorMessage)
         {
-            Console.WriteLine(_login.GetUserLoginErrorMessage());
-
             string actualErrorMessage = string.Empty;
 
             if (expectedErrorMessage.Equals("Epic sadface: Sorry, this user has been locked out.")) 
@@ -97,5 +95,10 @@ namespace SauceDemoTestAutomation.StepDefinitions
             Assert.That(actualErrorMessage.Equals(expectedErrorMessage));
         }
 
+        [AfterScenario]
+        public void ClosingSauceLabDemoApplication()
+        {
+            _context.ShutDownSauceDemoApplication();
+        }
     }
 }

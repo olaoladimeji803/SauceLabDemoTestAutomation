@@ -179,14 +179,14 @@ testRunner.And("the removed Sauce Labs Backpack item should no longer appear in 
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("06_Verify user can complete the checkout process after adding products to the car" +
-            "t")]
+        [NUnit.Framework.DescriptionAttribute("06_Verify that a user can complete the checkout process after adding item to the " +
+            "cart")]
         [NUnit.Framework.TestCaseAttribute("Kazeem", "Iyiola", "M244AU", "Your order has been dispatched", null)]
-        public virtual void _06_VerifyUserCanCompleteTheCheckoutProcessAfterAddingProductsToTheCart(string firstname, string lastname, string postcode, string orderConfirmatorySummary, string[] exampleTags)
+        public virtual void _06_VerifyThatAUserCanCompleteTheCheckoutProcessAfterAddingItemToTheCart(string firstname, string lastname, string postcode, string orderConfirmatorySummary, string[] exampleTags)
         {
             string[] tagsOfScenario = exampleTags;
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("06_Verify user can complete the checkout process after adding products to the car" +
-                    "t", null, exampleTags);
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("06_Verify that a user can complete the checkout process after adding item to the " +
+                    "cart", null, exampleTags);
 #line 21
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
@@ -217,9 +217,12 @@ testRunner.When("user select a Sauce Labs Backpack item and click \'Add to Cart\
 testRunner.And("the user proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 24
-testRunner.And(string.Format("user fill in the required information {0} {1} {2} and complete the purchase", firstname, lastname, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("user fill in the required information {0} {1} {2} and continue", firstname, lastname, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 25
+testRunner.And("user complete the order and checkout process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 26
 testRunner.Then(string.Format("verify redirection to the confirmation page and {0} is displayed accurately", orderConfirmatorySummary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -259,21 +262,20 @@ this.FeatureBackground();
 testRunner.When("user select a Sauce Labs Backpack item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 33
-testRunner.Then("the cart count increases in the cart basket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the cart count increases to \'1\' in the cart basket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();
         }
         
         [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("08_Verify user can add multiple items products to the cart and increases cart cou" +
-            "nt")]
-        public virtual void _08_VerifyUserCanAddMultipleItemsProductsToTheCartAndIncreasesCartCount()
+        [NUnit.Framework.DescriptionAttribute("08_Verify that a user can cancel inprogress order and return to product page")]
+        [NUnit.Framework.TestCaseAttribute("Kazeem", "Iyiola", "M244AU", "Your order has been dispatched", null)]
+        public virtual void _08_VerifyThatAUserCanCancelInprogressOrderAndReturnToProductPage(string firstname, string lastname, string postcode, string orderConfirmatorySummary, string[] exampleTags)
         {
-            string[] tagsOfScenario = ((string[])(null));
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("08_Verify user can add multiple items products to the cart and increases cart cou" +
-                    "nt", null, ((string[])(null)));
-#line 36
+            string[] tagsOfScenario = exampleTags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("08_Verify that a user can cancel inprogress order and return to product page", null, exampleTags);
+#line 35
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -296,17 +298,75 @@ this.ScenarioInitialize(scenarioInfo);
 #line 4
 this.FeatureBackground();
 #line hidden
+#line 36
+testRunner.When("user select a Sauce Labs Backpack item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
 #line 37
-testRunner.When("user select a Sauce Bike Light item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+testRunner.And("the user proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 38
-testRunner.And("user select a Sauce Bolt T-Shirt item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And(string.Format("user fill in the required information {0} {1} {2} and continue", firstname, lastname, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 39
-testRunner.And("user select a Sauce Fleece Jacket item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+testRunner.And("the user cancel the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 40
-testRunner.Then("the cart count increases in the cart basket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+testRunner.Then("the user is redirected to the product page, and the Products is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+#line hidden
+            }
+            this.ScenarioCleanup();
+        }
+        
+        [NUnit.Framework.TestAttribute()]
+        [NUnit.Framework.DescriptionAttribute("09_Verify user can add, calculate and correctly display multiple items totalprice" +
+            " and tax")]
+        [NUnit.Framework.TestCaseAttribute("Kazeem", "Iyiola", "M244AU", "Item total: $25.98", null)]
+        public virtual void _09_VerifyUserCanAddCalculateAndCorrectlyDisplayMultipleItemsTotalpriceAndTax(string firstname, string lastname, string postcode, string itemTotal, string[] exampleTags)
+        {
+            string[] tagsOfScenario = exampleTags;
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("09_Verify user can add, calculate and correctly display multiple items totalprice" +
+                    " and tax", null, exampleTags);
+#line 45
+this.ScenarioInitialize(scenarioInfo);
+#line hidden
+            bool isScenarioIgnored = default(bool);
+            bool isFeatureIgnored = default(bool);
+            if ((tagsOfScenario != null))
+            {
+                isScenarioIgnored = tagsOfScenario.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((this._featureTags != null))
+            {
+                isFeatureIgnored = this._featureTags.Where(__entry => __entry != null).Where(__entry => String.Equals(__entry, "ignore", StringComparison.CurrentCultureIgnoreCase)).Any();
+            }
+            if ((isScenarioIgnored || isFeatureIgnored))
+            {
+                testRunner.SkipScenario();
+            }
+            else
+            {
+                this.ScenarioStart();
+#line 4
+this.FeatureBackground();
+#line hidden
+#line 46
+testRunner.When("user select a \'Sauce Lab Bike Light\' item cost 9.99 each", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 47
+testRunner.And("user select a \'Sauce Lab Bolt T-Shirt\' item cost 15.99 each", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 48
+testRunner.And("user click on cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 49
+testRunner.And("the user proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 50
+testRunner.And(string.Format("user fill in the required information {0} {1} {2} and continue", firstname, lastname, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 51
+testRunner.Then(string.Format("the user is redirected to the Checkout Overview page and {0} are correctly dislay" +
+                            "ed", itemTotal), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
             this.ScenarioCleanup();

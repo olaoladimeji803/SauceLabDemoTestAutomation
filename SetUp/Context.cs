@@ -11,7 +11,7 @@ using TechTalk.SpecFlow;
 namespace SauceDemoTestAutomation.SetUp
 {
     public class Context
-    {
+    { 
         private IObjectContainer _objectContainer;
         private IWebDriver _driver;
         private string baseUrl = "https://www.saucedemo.com/v1/index.html";
@@ -31,13 +31,10 @@ namespace SauceDemoTestAutomation.SetUp
             _driver.Manage().Window.Maximize();
         }
         
-       [AfterScenario]
         public void ShutDownSauceDemoApplication()
         {
-           
-             _driver?.Quit();
-           // _driver.Quit();
-           // _driver.Dispose();
-        }
+           _driver.Close();
+           _driver.Dispose();
+        } 
     }
 }
