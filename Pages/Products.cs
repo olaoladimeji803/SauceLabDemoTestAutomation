@@ -1,12 +1,5 @@
 ﻿using OpenQA.Selenium;
-using OpenQA.Selenium.DevTools.V126.DOM;
-using OpenQA.Selenium.DevTools.V126.Storage;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace SauceDemoTestAutomation.Pages
 {

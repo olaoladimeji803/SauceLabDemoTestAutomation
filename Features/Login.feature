@@ -1,6 +1,6 @@
 ﻿Feature: Login
 
-A short summary of the feature
+#The login feature allows user to access their account; if they enter wrong credentials, access is blocked and an error message is displayed.
 
 @tag1
 Scenario: 01_Verify that a user can successful login with Valid Credentials
@@ -33,8 +33,3 @@ Scenario: 01_Verify that a user can successful login with Valid Credentials
 	| standard_user   |              | Epic sadface: Password is required                                        |
 	| standoood_user  | screeeetars  | Epic sadface: Username and password do not match any user in this service |
            
-
-
-
-    
-

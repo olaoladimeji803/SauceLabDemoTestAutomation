@@ -1,5 +1,7 @@
 ﻿Feature: Product
 
+# Users can add products to their cart, delete items they don't want, check out and enter their payment and shipping information,
+# see the total number of items and price, and cancel their order before it's finalised.
 
 Background: 
  Given the user is on the login page 

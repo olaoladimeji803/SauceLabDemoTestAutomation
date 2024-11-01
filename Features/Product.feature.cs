@@ -75,18 +75,18 @@ namespace SauceDemoTestAutomation.Features
         
         public virtual void FeatureBackground()
         {
-#line 4
-#line hidden
-#line 5
- testRunner.Given("the user is on the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
-#line hidden
 #line 6
- testRunner.When("the user enters a valid username standard_user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
 #line 7
- testRunner.And("the user enters valid password secret_sauce", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.Given("the user is on the login page", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line hidden
 #line 8
+ testRunner.When("the user enters a valid username standard_user", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+#line hidden
+#line 9
+ testRunner.And("the user enters valid password secret_sauce", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+#line hidden
+#line 10
  testRunner.And("clicks the login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
         }
@@ -100,7 +100,7 @@ namespace SauceDemoTestAutomation.Features
                     "tag1"};
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04_Verify user can successfuly selects product item and add it to the cart", null, new string[] {
                         "tag1"});
-#line 11
+#line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -120,13 +120,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 6
 this.FeatureBackground();
 #line hidden
-#line 12
+#line 14
 testRunner.When("user select a Sauce Labs Backpack item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 13
+#line 15
 testRunner.Then("user should see the selected Sauce Labs Backpack item appears in the cart list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -139,7 +139,7 @@ testRunner.Then("user should see the selected Sauce Labs Backpack item appears i
         {
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("05_Verify user can remove product item from cart list", null, ((string[])(null)));
-#line 15
+#line 17
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -159,19 +159,19 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 6
 this.FeatureBackground();
 #line hidden
-#line 16
+#line 18
 testRunner.When("user select a Sauce Labs Backpack item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 17
+#line 19
 testRunner.Then("user should see the selected Sauce Labs Backpack item appears in the cart list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
-#line 18
+#line 20
 testRunner.And("user remove the Sauce Labs Backpack item", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 19
+#line 21
 testRunner.And("the removed Sauce Labs Backpack item should no longer appear in the cart list", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
             }
@@ -187,7 +187,7 @@ testRunner.And("the removed Sauce Labs Backpack item should no longer appear in 
             string[] tagsOfScenario = exampleTags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("06_Verify that a user can complete the checkout process after adding item to the " +
                     "cart", null, exampleTags);
-#line 21
+#line 23
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -207,22 +207,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 6
 this.FeatureBackground();
 #line hidden
-#line 22
+#line 24
 testRunner.When("user select a Sauce Labs Backpack item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 23
+#line 25
 testRunner.And("the user proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 24
+#line 26
 testRunner.And(string.Format("user fill in the required information {0} {1} {2} and continue", firstname, lastname, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 25
+#line 27
 testRunner.And("user complete the order and checkout process", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 26
+#line 28
 testRunner.Then(string.Format("verify redirection to the confirmation page and {0} is displayed accurately", orderConfirmatorySummary), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -235,7 +235,7 @@ testRunner.Then(string.Format("verify redirection to the confirmation page and {
         {
             string[] tagsOfScenario = ((string[])(null));
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("07_Verify user can add multiple products to list and cart count increases", null, ((string[])(null)));
-#line 31
+#line 33
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -255,13 +255,13 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 6
 this.FeatureBackground();
 #line hidden
-#line 32
+#line 34
 testRunner.When("user select a Sauce Labs Backpack item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 33
+#line 35
 testRunner.Then("the cart count increases to \'1\' in the cart basket", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -275,7 +275,7 @@ testRunner.Then("the cart count increases to \'1\' in the cart basket", ((string
         {
             string[] tagsOfScenario = exampleTags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("08_Verify that a user can cancel inprogress order and return to product page", null, exampleTags);
-#line 35
+#line 37
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -295,22 +295,22 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 6
 this.FeatureBackground();
 #line hidden
-#line 36
+#line 38
 testRunner.When("user select a Sauce Labs Backpack item and click \'Add to Cart\'", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 37
+#line 39
 testRunner.And("the user proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 38
+#line 40
 testRunner.And(string.Format("user fill in the required information {0} {1} {2} and continue", firstname, lastname, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 39
+#line 41
 testRunner.And("the user cancel the order", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 40
+#line 42
 testRunner.Then("the user is redirected to the product page, and the Products is displayed", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }
@@ -326,7 +326,7 @@ testRunner.Then("the user is redirected to the product page, and the Products is
             string[] tagsOfScenario = exampleTags;
             TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("09_Verify user can add, calculate and correctly display multiple items totalprice" +
                     " and tax", null, exampleTags);
-#line 45
+#line 47
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
             bool isScenarioIgnored = default(bool);
@@ -346,25 +346,25 @@ this.ScenarioInitialize(scenarioInfo);
             else
             {
                 this.ScenarioStart();
-#line 4
+#line 6
 this.FeatureBackground();
 #line hidden
-#line 46
+#line 48
 testRunner.When("user select a \'Sauce Lab Bike Light\' item cost 9.99 each", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 47
+#line 49
 testRunner.And("user select a \'Sauce Lab Bolt T-Shirt\' item cost 15.99 each", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 48
+#line 50
 testRunner.And("user click on cart", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 49
+#line 51
 testRunner.And("the user proceed to checkout", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 50
+#line 52
 testRunner.And(string.Format("user fill in the required information {0} {1} {2} and continue", firstname, lastname, postcode), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 51
+#line 53
 testRunner.Then(string.Format("the user is redirected to the Checkout Overview page and {0} are correctly dislay" +
                             "ed", itemTotal), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
