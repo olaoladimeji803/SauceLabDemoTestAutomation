@@ -93,13 +93,10 @@ namespace SauceDemoTestAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("04_Verify user can successfuly selects product item and add it to the cart")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
         public virtual void _04_VerifyUserCanSuccessfulySelectsProductItemAndAddItToTheCart()
         {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04_Verify user can successfuly selects product item and add it to the cart", null, new string[] {
-                        "tag1"});
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("04_Verify user can successfuly selects product item and add it to the cart", null, ((string[])(null)));
 #line 13
 this.ScenarioInitialize(scenarioInfo);
 #line hidden

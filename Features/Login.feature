@@ -2,7 +2,7 @@
 
 #The login feature allows user to access their account; if they enter wrong credentials, access is blocked and an error message is displayed.
 
-@tag1
+
 Scenario: 01_Verify that a user can successful login with Valid Credentials
     Given the user is on the login page
     When the user enters a valid username standard_user

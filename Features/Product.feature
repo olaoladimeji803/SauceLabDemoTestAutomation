@@ -9,7 +9,7 @@ Background:
  And the user enters valid password secret_sauce
  And clicks the login button
 
-@tag1
+
 Scenario: 04_Verify user can successfuly selects product item and add it to the cart
 When user select a Sauce Labs Backpack item and click 'Add to Cart'
 Then user should see the selected Sauce Labs Backpack item appears in the cart list

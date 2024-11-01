@@ -75,13 +75,10 @@ namespace SauceDemoTestAutomation.Features
         
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("01_Verify that a user can successful login with Valid Credentials")]
-        [NUnit.Framework.CategoryAttribute("tag1")]
         public virtual void _01_VerifyThatAUserCanSuccessfulLoginWithValidCredentials()
         {
-            string[] tagsOfScenario = new string[] {
-                    "tag1"};
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01_Verify that a user can successful login with Valid Credentials", null, new string[] {
-                        "tag1"});
+            string[] tagsOfScenario = ((string[])(null));
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("01_Verify that a user can successful login with Valid Credentials", null, ((string[])(null)));
 #line 6
 this.ScenarioInitialize(scenarioInfo);
 #line hidden
